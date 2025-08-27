@@ -48,7 +48,7 @@
         <div class="container px-md-5">
           <div class="row w-100 g-0 justify-content-between">
             <div class="col-8">
-              <div class="d-inline-block"><a class="navbar-brand pt-0 fs-3 text-black d-flex align-items-center" href="index.html"><img class="img-fluid navbar-logo" src="assets/img/icons/網頁icon.png" alt="導覽列logo" /></a></div>
+              <div class="d-inline-block"><a class="navbar-brand pt-0 fs-3 text-black d-flex align-items-center" href="index.html"><img class="img-fluid navbar-logo" src="assets/img/icons/logo.png" alt="導覽列logo" /></a></div>
             </div>
             <div class="col-4 d-lg-none text-end pe-0">
               <button class="btn p-0 shadow-none text-black fs-2 d-inline-block" data-bs-toggle="offcanvas" data-bs-target="#navbarOffcanvas" aria-controls="navbarOffcanvas" aria-expanded="false" aria-label="Toggle offcanvas navigation"><span class="menu-bar"></span></button>
@@ -75,6 +75,7 @@
                 <div class="position-absolute absolute-centered z-index--1">
                   <h1 class="ms-2 fw-bolder text-outlined text-uppercase text-white pe-none display-1">Home</h1>
                 </div>
+                <div class="d-flex gap-3 align-items-start"><a class="mb-0 ms-auto text-warning fs-0 fw-bold text-uppercase" href="https://cdd.stust.edu.tw/">Chinese</a>
                 <div class="d-flex gap-3 align-items-start"><a class="mb-0 ms-auto text-warning fs-0 fw-bold text-uppercase" href="Admissions.html#contact">Contact Now</a>
                   <ul class="navbar-nav navbar-fotogency ms-auto text-end">
                     <li class="nav-item px-2 position-relative"><a class="nav-link pt-0 active" aria-current="page" href="index.html">Home</a></li>
@@ -132,7 +133,7 @@
               <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
                 <div class="carousel-inner">
                   <div class="carousel-item active">
-                    <img class="img-fluid w-100" src="assets/img/home/院形象網頁用(南台).jpg" alt="形象1" />
+                    <img class="img-fluid w-100" src="assets/img/home/院形象網頁用.png" alt="形象1" />
                   </div>
                   <div class="carousel-item">
                     <img class="img-fluid w-100" src="assets/img/home/首頁照片.png" alt="形象2" />
@@ -188,13 +189,19 @@
 
         <div class="container-fluid px-0">
           <div class="container px-md-5">
+        <!-- 🔹新增的系所介紹標題區塊 -->
+          <div class="row mb-4">
+            <div class="col-11 text-left">
+            <h2 class="fw-bold" style="color:#e90; margin-bottom: 1rem;">Explore Our Five Academic Departments :</h2>
+            </div>
+
             <div class="row g-0">
               <div class="col-lg-12 pb-6 px-0 mb-lg-0">
                 <div class="swiper-container swiper-theme" data-swiper='{"slidesPerView":1,"breakpoints":{"576":{"slidesPerView":1.2}},"spaceBetween":30,"grabCursor":true,"pagination":{"el":".swiper-pagination","clickable":true},"loop":true,"loopedSlides":3,"slideToClickedSlide":true}'>
                   <div class="swiper-wrapper">
                     <div class="swiper-slide">
                        <!-- 共用底層色塊 -->
-                        <div class="bg-block position-absolute top-0 start-0 w-100 h-100"></div>
+                      <div class="bg-block position-absolute top-0 start-0 w-100 h-100"></div>
 
                       <div class="row align-items-center">
                         <div class="col-xl-7">
@@ -297,6 +304,26 @@
         <!-- end of .container-->
 
       </section>
+      <style>
+      @media (max-width: 768px) {
+        .swiper-slide {
+          padding: 15px;         /* 卡片四周留白 */
+        }
+        .swiper-slide .row {
+          margin: 0;             /* 移除 row 的負邊距 */
+        }
+        .swiper-slide .col-12,
+        .swiper-slide .col-xl-7,
+        .swiper-slide .col-xl-4,
+        .swiper-slide .col-xl-5 {
+          padding: 10px;         /* 讓文字和圖片不要緊貼邊緣 */
+        }
+        .swiper-slide p {
+          padding: 0 5px;        /* 文字段落再縮一點 */
+        }
+      }
+      </style>
+      
       <!-- <section> close ============================-->
       <!-- ============================================-->
 
