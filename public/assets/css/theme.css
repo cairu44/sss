@@ -22849,6 +22849,9 @@ h4 {
   .zigzag-block.reverse .text {
     order: 1;
   }
+   .zigzag-block.reverse .text1 {
+    order: 1;
+  }
 
   /* 圖片響應式大小 */
   .zigzag-block .image img {
@@ -22863,7 +22866,11 @@ h4 {
     width: 100%;
     max-width: 100%;
   }
-
+  .zigzag-block .text1,
+  .zigzag-block .image {
+    width: 100%;
+    max-width: 100%;
+  }
   .textone {
     padding: 10px;
   }
@@ -22872,6 +22879,20 @@ h4 {
     padding: 10px;
     margin: 10px;
   }
+
+  .text1 {
+    flex: 1 1 100%;
+    padding: 10px;
+  }
+
+  .text2 h4 {
+    font-size: 1.2rem;
+  }
+
+  .text2 p {
+    font-size: 0.95rem;
+  }
+
 }
 
 
