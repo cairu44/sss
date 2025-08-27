@@ -61,7 +61,7 @@
   --fg-body-font-size: 1rem;
   --fg-body-font-weight: 400;
   --fg-body-line-height: 1.45;
-  --fg-body-color: #5B7075;
+  --fg-body-color: #000000;
   --fg-body-bg: #fff;
 }
 
@@ -284,7 +284,7 @@
   --fg-list-group-action-hover-color: #5B7075;
   --fg-list-group-hover-bg: #E5E5E5;
   --fg-body-bg: #fff;
-  --fg-body-color: #5B7075;
+  --fg-body-color: #555;
   --fg-headings-color: #000;
   --fg-link-color: #5EDCD4;
   --fg-link-hover-color: #4bb0aa;
@@ -22131,6 +22131,9 @@ a h4 {
   text-decoration: underline;
 }
 
+
+
+/*右邊：圖片與連結（兩張卡片垂直排列） */
 /* ✅ 讓 card 區塊呈現圖片覆蓋 + 漸層文字浮層 */
 .card.border-0.text-left {
   position: relative;
@@ -22140,7 +22143,7 @@ a h4 {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  height: 600px;
+  height: 400px;
   width: 600px;
   margin-left: 50px;
 }
@@ -22360,6 +22363,7 @@ a h4 {
   font-weight: 500;
   text-decoration: none;
   transition: all 0.3s ease;
+  font-size: 1.25rem;       /* 放大字體 */
 }
 
 .more-btn:hover {
@@ -22651,6 +22655,14 @@ h2.section-title {
   .student-support-wrapper .image {
     flex: 1 1 100%;
   }
+  
+  .student-support-wrapper .image img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 15px;
+  transition: transform 0.4s ease;
+}
 
   .student-support-wrapper .text h2 {
     justify-content: center;
@@ -22744,6 +22756,13 @@ h4 {
   text-align: justify;
 }
 
+.custom-list li a {
+  text-decoration: underline; /* 加上底線 */
+  text-decoration-color: #e90; /* 改變底線顏色 */
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
 /* 小標加粗 */
 .custom-list strong {
   font-weight: 700;
@@ -22815,6 +22834,46 @@ h4 {
 .role-title {
   color: #444;
 }
+/* 響應式：平板與手機 */
+@media (max-width: 768px) {
+  .zigzag-block,
+  .zigzag-block.reverse {
+    flex-direction: column; /* 讓左右區塊變成上下排列 */
+  }
+
+  /* 讓 reverse 區塊在手機上也維持「文字在上、圖片在下」 */
+  .zigzag-block.reverse .image {
+    order: 2;
+  }
+
+  .zigzag-block.reverse .text {
+    order: 1;
+  }
+
+  /* 圖片響應式大小 */
+  .zigzag-block .image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+
+  /* 文字區塊寬度與間距微調 */
+  .zigzag-block .text,
+  .zigzag-block .image {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .textone {
+    padding: 10px;
+  }
+
+  .overview-section {
+    padding: 10px;
+    margin: 10px;
+  }
+}
+
 
 
 /*區塊 3：一張圖 */
@@ -22838,6 +22897,38 @@ h4 {
 }
 .description {
   margin-bottom: 0;
+}
+/* ✅ 響應式：手機版圖片在上、文字在下 */
+@media (max-width: 768px) {
+  .student-support-wrapper section {
+    flex-direction: column;
+  }
+
+  .student-support-wrapper .image {
+    order: 1;
+    width: 100%;
+  }
+
+  .student-support-wrapper .text {
+    order: 2;
+    width: 100%;
+  }
+
+  .student-support-wrapper header h1 {
+    font-size: 1.75rem;
+  }
+
+  .student-support-wrapper header p {
+    font-size: 1rem;
+  }
+
+  .student-support-wrapper .text h2 {
+    font-size: 1.25rem;
+  }
+
+  .student-support-wrapper .text ul {
+    font-size: 0.95rem;
+  }
 }
 
 
@@ -23098,57 +23189,107 @@ h4 {
     font-weight: 700;
   }
 
-  /* 分區版塊 */
-  .content-section {
-    background: white;
-    border-radius: 16px;
-    box-shadow: 0 4px 14px rgb(13 110 253 / 0.15);
-    margin-bottom: 4.5rem;
-    transition: box-shadow 0.3s ease;
-   
-  }
- 
+/* 分區版塊 */
+.content-section {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 14px rgb(13 110 253 / 0.15);
+  margin-bottom: 4.5rem;
+  transition: box-shadow 0.3s ease;
+  padding: 2rem 1rem;
+  max-width: 1400px;
+  margin-inline: auto;
+  box-sizing: border-box;
+}
+
+/* 介紹區塊 */
+.Introduction {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 2rem;
+}
+
+/* 文字內容 */
+.Introduction p {
+  max-width: 100%;
+  font-size: 1.05rem;            /* 稍微縮小，更適合長文閱讀 */
+  margin-bottom: 1.25rem;        /* 段落間距微調 */
+  letter-spacing: 0.2px;         /* 字距稍微收斂，更穩定 */
+  color: #555;                   /* 比 #444 更柔和一點 */
+  text-align: left;     
+}
+
+/* 標題樣式 */
+.content-section h2 {
+  margin-bottom: 1rem;
+  color: #e90;
+  border-left: 6px solid #e90;
+  padding-left: 10px;
+}
+
+/* 職涯區塊標題 */
+.career-grid h3 {
+  color: #212529;
+  margin-top: 1.2rem;
+  margin-bottom: 0.6rem;
+}
+
+/* 職涯卡片文字 */
+.career-card p {
+  font-size: 1rem;
+  color: #444;
+  margin-bottom: 1rem;
+}
+
+/* 特點列表 */
+.feature-text ul {
+  padding-left: 1.5rem;
+}
+
+.feature-text ul li {
+  margin-bottom: 0.5rem;
+}
+
+/* 響應式：平板以下 */
+@media (max-width: 768px) {
   .Introduction {
-    margin: 0; /* 移除 auto，避免限制寬度 */
-    font-family: 'Segoe UI', sans-serif;
-    color: #333;
-    width: 100vw; /* 滿版寬度 */
-    box-sizing: border-box; /* 確保 padding 不影響寬度 */
+    padding: 1.5rem;
   }
-  
+
   .Introduction p {
-    width: 1400px;
-    font-size: 1.125rem;           /* 稍大一點，提升可讀性 */
-    margin-bottom: 1.5rem;         /* 段落間距 */
-    letter-spacing: 0.3px;         /* 微字距，提升精緻感 */
-    color: #444;                   /* 比 #333 稍柔和一點 */
-    text-align: justify;           /* 文字左右對齊，整齊感提升 */
+    font-size: 1rem;
+  }
+
+  .content-section {
+    padding: 1.5rem 1rem;
+  }
+}
+
+/* 響應式：手機以下 */
+@media (max-width: 480px) {
+  .Introduction {
+    padding: 1rem;
+  }
+
+  .Introduction p {
+    font-size: 0.95rem;
   }
 
   .content-section h2 {
-    margin-bottom: 1rem;
-    color: #e90;
-    border-left: 6px solid #e90;
-    padding-left: 10px;
+    font-size: 1.25rem;
   }
 
   .career-grid h3 {
-    color: #212529;
-    margin-top: 1.2rem;
-    margin-bottom: 0.6rem;
+    font-size: 1.1rem;
   }
 
   .career-card p {
-    font-size: 1rem;
-    color: #444;
-    margin-bottom: 1rem;
+    font-size: 0.95rem;
   }
-  .feature-text ul {
-    padding-left: 1.5rem;
-  }
-  .feature-text ul li {
-    margin-bottom: 0.5rem;
-  }
+}
 
   /* 職涯卡片 Grid，兩欄自動縮放 */
   .career-grid {

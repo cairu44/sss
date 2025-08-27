@@ -61,7 +61,7 @@
   --fg-body-font-size: 1rem;
   --fg-body-font-weight: 400;
   --fg-body-line-height: 1.45;
-  --fg-body-color: #5B7075;
+  --fg-body-color: #000000;
   --fg-body-bg: #fff;
 }
 
@@ -281,10 +281,10 @@
   --fg-transparent-50: rgba(255, 255, 255, 0.5);
   /* ------------------------------- List Group ------------------------------- */
   --fg-list-group-bg: #fff;
-  --fg-list-group-action-hover-color: #5B7075;
+  --fg-list-group-action-hover-color: #000000;
   --fg-list-group-hover-bg: #E5E5E5;
   --fg-body-bg: #fff;
-  --fg-body-color: #5B7075;
+  --fg-body-color: #000000;
   --fg-headings-color: #000;
   --fg-link-color: #5EDCD4;
   --fg-link-hover-color: #4bb0aa;
